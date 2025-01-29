@@ -603,38 +603,6 @@
             "vertices": []
           },
           {
-            "shape": "trust-boundary-curve",
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Boundary",
-              "name": "Generic Trust Boundary",
-              "description": "",
-              "isTrustBoundary": true,
-              "hasOpenThreats": false
-            },
-            "labels": [
-              "Generic Trust Boundary"
-            ],
-            "id": "c934edad-4cec-4460-b997-35d24250b23c",
-            "source": {
-              "x": 780,
-              "y": 20
-            },
-            "target": {
-              "x": 780,
-              "y": 400
-            },
-            "vertices": [
-              {
-                "x": 720,
-                "y": 210
-              }
-            ]
-          },
-          {
             "shape": "flow",
             "attrs": {
               "line": {
@@ -678,160 +646,6 @@
               "y": 330
             },
             "vertices": []
-          },
-          {
-            "position": {
-              "x": 833,
-              "y": 290.00000000000006
-            },
-            "size": {
-              "width": 100,
-              "height": 100
-            },
-            "attrs": {
-              "text": {
-                "text": "SQL Database"
-              },
-              "body": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
-                "strokeDasharray": null
-              }
-            },
-            "visible": true,
-            "shape": "process",
-            "zIndex": 11,
-            "ports": {
-              "groups": {
-                "top": {
-                  "position": "top",
-                  "attrs": {
-                    "circle": {
-                      "r": 4,
-                      "magnet": true,
-                      "stroke": "#5F95FF",
-                      "strokeWidth": 1,
-                      "fill": "#fff",
-                      "style": {
-                        "visibility": "hidden"
-                      }
-                    }
-                  }
-                },
-                "right": {
-                  "position": "right",
-                  "attrs": {
-                    "circle": {
-                      "r": 4,
-                      "magnet": true,
-                      "stroke": "#5F95FF",
-                      "strokeWidth": 1,
-                      "fill": "#fff",
-                      "style": {
-                        "visibility": "hidden"
-                      }
-                    }
-                  }
-                },
-                "bottom": {
-                  "position": "bottom",
-                  "attrs": {
-                    "circle": {
-                      "r": 4,
-                      "magnet": true,
-                      "stroke": "#5F95FF",
-                      "strokeWidth": 1,
-                      "fill": "#fff",
-                      "style": {
-                        "visibility": "hidden"
-                      }
-                    }
-                  }
-                },
-                "left": {
-                  "position": "left",
-                  "attrs": {
-                    "circle": {
-                      "r": 4,
-                      "magnet": true,
-                      "stroke": "#5F95FF",
-                      "strokeWidth": 1,
-                      "fill": "#fff",
-                      "style": {
-                        "visibility": "hidden"
-                      }
-                    }
-                  }
-                }
-              },
-              "items": [
-                {
-                  "group": "top",
-                  "id": "4c5a5baf-8816-43d7-9949-70ae13fe9e2c"
-                },
-                {
-                  "group": "right",
-                  "id": "3f60c4d9-ac48-413e-b3c1-251e8b6bce22"
-                },
-                {
-                  "group": "bottom",
-                  "id": "8de13212-ad4a-4059-b2b1-23b931c0dfe2"
-                },
-                {
-                  "group": "left",
-                  "id": "55a5d9dd-85d6-437e-8b95-28d94e922b7e"
-                }
-              ]
-            },
-            "id": "241cdb1d-3dff-4d88-bf7f-677c40ee7ad2",
-            "data": {
-              "type": "tm.Process",
-              "name": "SQL Database",
-              "description": "",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": true,
-              "handlesCardPayment": false,
-              "handlesGoodsOrServices": false,
-              "isWebApplication": false,
-              "privilegeLevel": "",
-              "threats": [
-                {
-                  "id": "2960c673-7da9-49c0-a8f1-f8d1a9fe1036",
-                  "title": "SQL Database Spoofing",
-                  "status": "Mitigated",
-                  "severity": "TBA",
-                  "type": "Spoofing",
-                  "description": "The SQL Database may be spoofed by an attacker, and this may lead to data being written to the attacker's target instead of the SQL Database.",
-                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
-                  "modelType": "STRIDE",
-                  "new": false,
-                  "number": 21,
-                  "score": ""
-                },
-                {
-                  "id": "3153b3fc-40c7-4ca0-99ca-50a1a8f91a6c",
-                  "title": "Repudiation - SQL Database",
-                  "status": "Open",
-                  "severity": "TBA",
-                  "type": "Repudiation",
-                  "description": "The SQL Database claims that it did not write data received from an entity on the other side of the trust boundary.",
-                  "mitigation": "Consider using logging or auditing to record the source, time and a summary of the received data.",
-                  "modelType": "STRIDE",
-                  "new": false,
-                  "number": 24,
-                  "score": ""
-                }
-              ],
-              "threatFrequency": {
-                "spoofing": 1,
-                "tampering": 0,
-                "repudiation": 1,
-                "informationDisclosure": 0,
-                "denialOfService": 0,
-                "elevationOfPrivilege": 0
-              }
-            }
           },
           {
             "position": {
@@ -1212,8 +1026,12 @@
             },
             "vertices": [
               {
-                "x": 332,
-                "y": 222
+                "x": 330,
+                "y": 180
+              },
+              {
+                "x": 330,
+                "y": 240
               }
             ]
           },
@@ -1336,12 +1154,12 @@
               "threats": [
                 {
                   "id": "50522d47-8d8f-4380-b0b7-2964ca0fa70f",
-                  "title": "Browser Client Spoofing",
+                  "title": "Context Impersonation",
                   "status": "Open",
                   "severity": "TBA",
-                  "type": "Spoofing",
-                  "description": "An attacker may spoof the browser client to impersonate a legitimate user, potentially gaining unauthorized access to sensitive information or services.",
-                  "mitigation": "Use strong authentication mechanisms, such as multi-factor authentication (MFA), to verify the identity of the client. ",
+                  "type": "Elevation of privilege",
+                  "description": "The browser client may be able to impersonate the context of the web application in order to gain additional privilege.",
+                  "mitigation": "",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 32,
@@ -1367,7 +1185,190 @@
                 "repudiation": 0,
                 "informationDisclosure": 0,
                 "denialOfService": 1,
-                "elevationOfPrivilege": 0
+                "elevationOfPrivilege": 1
+              }
+            }
+          },
+          {
+            "shape": "trust-boundary-curve",
+            "width": 200,
+            "height": 100,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Boundary",
+              "name": "Generic Trust Boundary",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false
+            },
+            "labels": [
+              "Generic Trust Boundary"
+            ],
+            "id": "bcc00033-7edd-4e97-a482-d2706d3c295a",
+            "source": {
+              "x": 784,
+              "y": 24
+            },
+            "target": {
+              "x": 784,
+              "y": 404
+            },
+            "vertices": [
+              {
+                "x": 722,
+                "y": 172
+              },
+              {
+                "x": 722,
+                "y": 232
+              }
+            ],
+            "zIndex": 18
+          },
+          {
+            "position": {
+              "x": 835,
+              "y": 300.00000000000006
+            },
+            "size": {
+              "width": 150,
+              "height": 79.99999999999999
+            },
+            "attrs": {
+              "text": {
+                "text": "SQL Database"
+              },
+              "body": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "actor",
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "1a1ef7a2-18f4-46f2-aea6-955862ed7fe5"
+                },
+                {
+                  "group": "right",
+                  "id": "60ab90d5-9039-4e50-9b75-08e55fff8aa1"
+                },
+                {
+                  "group": "bottom",
+                  "id": "3fa9b91d-07d2-48f5-b32c-2d26de6eeb3a"
+                },
+                {
+                  "group": "left",
+                  "id": "aafbea16-3148-4e56-b754-45953afb2f4f"
+                }
+              ]
+            },
+            "id": "d6ba5867-db08-4a31-9b26-cce013d172ee",
+            "zIndex": 19,
+            "data": {
+              "type": "tm.Actor",
+              "name": "SQL Database",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "providesAuthentication": false,
+              "threats": [
+                {
+                  "id": "ac716705-57e2-4eab-a40e-c242dd111c71",
+                  "title": "SQL Database Spoofing",
+                  "status": "Mitigated",
+                  "severity": "TBA",
+                  "type": "Spoofing",
+                  "description": "The SQL Database may be spoofed by an attacker, and this may lead to data being written to the attacker's target instead of the SQL Database.",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 35,
+                  "score": ""
+                },
+                {
+                  "id": "b2f0c0c7-92e2-4dd6-936f-774e5351a293",
+                  "title": "Repudiation - SQL Database",
+                  "status": "Open",
+                  "severity": "TBA",
+                  "type": "Repudiation",
+                  "description": "The SQL Database claims that it did not write data received from an entity on the other side of the trust boundary.",
+                  "mitigation": "Consider using logging or auditing to record the source, time and a summary of the received data.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 36,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 1,
+                "repudiation": 1
               }
             }
           }
@@ -1376,6 +1377,6 @@
     ],
     "diagramTop": 1,
     "reviewer": "",
-    "threatTop": 33
+    "threatTop": 36
   }
 }
