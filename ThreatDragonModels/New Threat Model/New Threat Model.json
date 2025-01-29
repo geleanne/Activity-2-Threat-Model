@@ -38,6 +38,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 1,
             "ports": {
               "groups": {
                 "top": {
@@ -121,7 +122,6 @@
               ]
             },
             "id": "109e5f3e-7400-4edd-a03c-82f1062e0e80",
-            "zIndex": 1,
             "data": {
               "type": "tm.Process",
               "name": "Authorization\nProvider",
@@ -157,6 +157,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 2,
             "ports": {
               "groups": {
                 "top": {
@@ -240,7 +241,6 @@
               ]
             },
             "id": "988854cc-7101-4220-9706-4fe2d982f16b",
-            "zIndex": 2,
             "data": {
               "type": "tm.Process",
               "name": "Web\nApplication",
@@ -255,18 +255,39 @@
               "threats": [
                 {
                   "id": "3e88169c-03a4-4ad8-942c-ca08153ca9f7",
-                  "title": "New STRIDE threat",
-                  "status": "Open",
+                  "title": "Web Application Spoofing",
+                  "status": "Mitigated",
                   "severity": "TBA",
                   "type": "Spoofing",
-                  "description": "Provide a description for this threat",
+                  "description": "The web application may be spoofed by an attacker and this may lead to unauthorized access to the browser client. ",
                   "mitigation": "Provide remediation for this threat or a reason if status is N/A",
                   "modelType": "STRIDE",
-                  "new": true,
+                  "new": false,
                   "number": 7,
                   "score": ""
+                },
+                {
+                  "id": "e622efad-c387-4085-8cd0-323151a27c5f",
+                  "title": "Repudiation - Web Application",
+                  "status": "Open",
+                  "severity": "TBA",
+                  "type": "Repudiation",
+                  "description": "The web application claims that it did not receive data from a process on the other side of the trust boundary.",
+                  "mitigation": "Consider using logging or auditing to record the source, time and a summary of the received data.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 25,
+                  "score": ""
                 }
-              ]
+              ],
+              "threatFrequency": {
+                "spoofing": 4,
+                "tampering": 0,
+                "repudiation": 1,
+                "informationDisclosure": 0,
+                "denialOfService": 0,
+                "elevationOfPrivilege": 0
+              }
             }
           },
           {
@@ -290,6 +311,7 @@
             },
             "visible": true,
             "shape": "actor",
+            "zIndex": 5,
             "ports": {
               "groups": {
                 "top": {
@@ -373,7 +395,6 @@
               ]
             },
             "id": "78cc4637-87a7-4705-b275-25b8d89995ec",
-            "zIndex": 5,
             "data": {
               "type": "tm.Actor",
               "name": "Browser Client",
@@ -385,18 +406,22 @@
               "threats": [
                 {
                   "id": "821dd3ac-9cf7-4d3f-a914-fa82efd9534a",
-                  "title": "New STRIDE threat",
+                  "title": "Browser Client Spoofing",
                   "status": "Open",
                   "severity": "TBA",
                   "type": "Spoofing",
-                  "description": "Provide a description for this threat",
-                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "description": "An attacker may spoof the browser client to impersonate a legitimate user, potentially gaining unauthorized access to sensitive information or services.",
+                  "mitigation": "Use strong authentication mechanisms, such as multi-factor authentication (MFA), to verify the identity of the client. ",
                   "modelType": "STRIDE",
-                  "new": true,
+                  "new": false,
                   "number": 6,
                   "score": ""
                 }
-              ]
+              ],
+              "threatFrequency": {
+                "spoofing": 1,
+                "repudiation": 0
+              }
             }
           },
           {
@@ -802,13 +827,14 @@
                 "text": "SQL Database"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 11,
             "ports": {
               "groups": {
                 "top": {
@@ -892,19 +918,53 @@
               ]
             },
             "id": "241cdb1d-3dff-4d88-bf7f-677c40ee7ad2",
-            "zIndex": 11,
             "data": {
               "type": "tm.Process",
               "name": "SQL Database",
               "description": "",
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "2960c673-7da9-49c0-a8f1-f8d1a9fe1036",
+                  "title": "SQL Database Spoofing",
+                  "status": "Mitigated",
+                  "severity": "TBA",
+                  "type": "Spoofing",
+                  "description": "The SQL Database may be spoofed by an attacker, and this may lead to data being written to the attacker's target instead of the SQL Database.",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 21,
+                  "score": ""
+                },
+                {
+                  "id": "3153b3fc-40c7-4ca0-99ca-50a1a8f91a6c",
+                  "title": "Repudiation - SQL Database",
+                  "status": "Open",
+                  "severity": "TBA",
+                  "type": "Repudiation",
+                  "description": "The SQL Database claims that it did not write data received from an entity on the other side of the trust boundary.",
+                  "mitigation": "Consider using logging or auditing to record the source, time and a summary of the received data.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 24,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 1,
+                "tampering": 0,
+                "repudiation": 1,
+                "informationDisclosure": 0,
+                "denialOfService": 0,
+                "elevationOfPrivilege": 0
+              }
             }
           },
           {
@@ -921,16 +981,19 @@
                 "text": "LDAP"
               },
               "topLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               },
               "bottomLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
             "visible": true,
             "shape": "store",
+            "zIndex": 12,
             "ports": {
               "groups": {
                 "top": {
@@ -1014,20 +1077,65 @@
               ]
             },
             "id": "ecd9f416-d09f-462f-9b47-98a08eb4533d",
-            "zIndex": 12,
             "data": {
               "type": "tm.Store",
               "name": "LDAP",
               "description": "",
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isALog": false,
               "isEncrypted": false,
               "isSigned": false,
               "storesCredentials": false,
               "storesInventory": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "6acf879d-1cd4-427b-9f44-1db5e3e63f6d",
+                  "title": "SQL Injection Attack",
+                  "status": "Open",
+                  "severity": "TBA",
+                  "type": "Tampering",
+                  "description": "Malicious code is inserted into strings that are later passed to an instance of SQL Server for parsing and execution.",
+                  "mitigation": "Validate all input and use proper mechanisms to ensure only expected input is processed.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 22,
+                  "score": ""
+                },
+                {
+                  "id": "b986b16e-2a8b-4878-ab8f-cb327b95a77c",
+                  "title": "LDAP Injection Attack",
+                  "status": "Open",
+                  "severity": "TBA",
+                  "type": "Tampering",
+                  "description": "An attacker may insert malicious input into LDAP queries, which could allow unauthorized access.",
+                  "mitigation": "Validate all input before processing LDAP queries.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 23,
+                  "score": ""
+                },
+                {
+                  "id": "f6bc6243-6a65-49c4-8670-d62da02fc7eb",
+                  "title": "Repudiation - LDAP",
+                  "status": "Open",
+                  "severity": "TBA",
+                  "type": "Repudiation",
+                  "description": "LDAP claims that it did not write data received from an entity on the other side of the trust boundary. ",
+                  "mitigation": "Consider using logging or auditing to record the source, time and a summary of the received data.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 26,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 3,
+                "repudiation": 1,
+                "informationDisclosure": 0,
+                "denialOfService": 0
+              }
             }
           },
           {
@@ -1046,6 +1154,7 @@
             },
             "width": 200,
             "height": 100,
+            "zIndex": 13,
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
@@ -1072,8 +1181,7 @@
               "x": 424,
               "y": 354
             },
-            "vertices": [],
-            "zIndex": 13
+            "vertices": []
           },
           {
             "shape": "flow",
@@ -1091,6 +1199,7 @@
             },
             "width": 200,
             "height": 100,
+            "zIndex": 14,
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
@@ -1117,14 +1226,14 @@
               "x": 192,
               "y": 312
             },
-            "vertices": [],
-            "zIndex": 14
+            "vertices": []
           },
           {
             "shape": "flow",
             "attrs": {
               "line": {
-                "stroke": "#333333",
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "targetMarker": {
                   "name": "block"
                 },
@@ -1144,12 +1253,44 @@
               "description": "",
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isBidirectional": false,
               "isEncrypted": false,
               "isPublicNetwork": false,
               "protocol": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "965838bc-526d-4e46-93c2-09f074af3778",
+                  "title": "Saved Feedback Comments Tampering",
+                  "status": "Open",
+                  "severity": "TBA",
+                  "type": "Tampering",
+                  "description": "Data flowing across saved feedback comments may be tampered with by an attacker. Failure to verify that input is as expected is a root cause of a very large number of exploitable issues.",
+                  "mitigation": "Consider all paths and the way they handle data. Verify that all input is verified for correctness using an approved-list input validation approach. ",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 27,
+                  "score": ""
+                },
+                {
+                  "id": "1abad853-94e4-4840-9aad-3b8ad570bde8",
+                  "title": "Saved Feedback Comments (Sniffing)",
+                  "status": "Open",
+                  "severity": "TBA",
+                  "type": "Information disclosure",
+                  "description": "Data flowing across saved feedback comments may be sniffed by an attacker. Depending on what type of data an attacker can read, it may be used to attack other parts of the system or simply be a disclosure of information leading to compliance violations.",
+                  "mitigation": "Consider encrypting the data flow.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 28,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 1,
+                "informationDisclosure": 1,
+                "denialOfService": 0
+              }
             },
             "labels": [
               "Feedback Comments Saved"
@@ -1169,6 +1310,7 @@
             "shape": "trust-boundary-curve",
             "width": 200,
             "height": 100,
+            "zIndex": 16,
             "connector": "smooth",
             "data": {
               "type": "tm.Boundary",
@@ -1194,14 +1336,13 @@
                 "x": 332,
                 "y": 222
               }
-            ],
-            "zIndex": 16
+            ]
           }
         ]
       }
     ],
     "diagramTop": 1,
     "reviewer": "",
-    "threatTop": 26
+    "threatTop": 29
   }
 }
