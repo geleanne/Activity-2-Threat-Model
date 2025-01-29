@@ -821,13 +821,26 @@
                   "new": false,
                   "number": 30,
                   "score": ""
+                },
+                {
+                  "id": "2c44f631-6567-4e93-a6cd-ef19955202f1",
+                  "title": "Denial of Service (DoS) Attack",
+                  "status": "Open",
+                  "severity": "TBA",
+                  "type": "Denial of service",
+                  "description": "An external agent prevents access to a data store on the other side of the trust boundary.",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 39,
+                  "score": ""
                 }
               ],
               "threatFrequency": {
                 "tampering": 5,
                 "repudiation": 1,
                 "informationDisclosure": 1,
-                "denialOfService": 0
+                "denialOfService": 1
               }
             }
           },
@@ -1364,6 +1377,19 @@
                   "new": false,
                   "number": 36,
                   "score": ""
+                },
+                {
+                  "id": "08fa70c8-edb7-42f2-9493-7f930a0ae82e",
+                  "title": "New STRIDE threat",
+                  "status": "Open",
+                  "severity": "TBA",
+                  "type": "Spoofing",
+                  "description": "Provide a description for this threat",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": true,
+                  "number": 38,
+                  "score": ""
                 }
               ],
               "threatFrequency": {
@@ -1377,6 +1403,6 @@
     ],
     "diagramTop": 1,
     "reviewer": "",
-    "threatTop": 36
+    "threatTop": 39
   }
 }
